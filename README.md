@@ -19,15 +19,15 @@ Has usability such as : addition, substraction, multiplying, dividing, swapping 
 
 ## Updatelog for Frank's calculator
 
-# **Version 1.0.1**
+### **Version 1.0.1**
 
 ```
-- Bugfixes:
+	- Bugfixes:
 
-	- Fixed and issue where computation did not display in `computationScreen` after using 	an operator.
-	- Fixed an issue where the `revert` and `percentage` function did not change the state.
-	- Delete does not crash the application after a decimal number is used.
-	- Resolved an issue where decimals could be re-used after percentage already assigned decimals.
+		- Fixed and issue where computation did not display in `computationScreen` after using 	an operator.
+		- Fixed an issue where the `revert` and `percentage` function did not change the state.
+		- Delete does not crash the application after a decimal number is used.
+		- Resolved an issue where decimals could be re-used after percentage already assigned decimals.
 
 ```
 
