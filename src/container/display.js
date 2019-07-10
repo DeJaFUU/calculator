@@ -39,7 +39,7 @@ class Display extends Component {
 		 		<KeypadRow>
 		 <Button id="revert" type="operator" clicked={this.props.display ? this.props.onRevert : null}>&plusmn;</Button>
 		 <Button id="zero" clicked={this.props.display ? () => this.props.onPressNumber(0) : null}>0</Button>
-		 <Button id="decimal" type="operator" clicked={this.props.decimal ? "" : this.props.onDecimal}>.</Button>
+		 <Button id="decimal" type="operator" clicked={(Number(this.props.display))===Math.floor(Number(this.props.display)) ? this.props.onDecimal : ""}>.</Button>
 		 <Button  id="equals" type="operator" clicked={this.props.operator ? this.props.onPressEquals : null}>=</Button>
 				</KeypadRow>
 		</div>
@@ -52,7 +52,6 @@ const mapStateToProps = (state) =>{
 	display: state.display,
 	prevState: state.prevState,
 	history: state.history,
-	decimal: state.decimal,
 	operator: state.operator,
 	updatedNumber: state.updatedNumber
 	}

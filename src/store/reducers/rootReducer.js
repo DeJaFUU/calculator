@@ -13,7 +13,6 @@ const initialState = {
 	display: "",
 	currState: "",
 	lastNumber: "",
-	decimal: false,
 	operator: ""
 };
 
@@ -27,16 +26,14 @@ const addOperator = (state, action) => {
 	return updateObject(state, {currState: !state.currState ? state.display : state.currState,
 								updatedNumber: state.display ? state.display : state.updatedNumber,
 								display: initialState.display,
-								operator: action.operator,
-								decimal: false});
+								operator: action.operator});
 }
 
 const equals = (state, action) => {
 	const updatedNumber = Number(state.currState) + state.operator + Number(state.lastNumber);
-	return updateObject(state, 	{display: eval(updatedNumber),
+	return updateObject(state, 	{display: +eval(updatedNumber).toFixed(4),
 								currState: eval(updatedNumber),
-								updatedNumber: updatedNumber,
-								decimal: false})
+								updatedNumber: updatedNumber})
 }
 
 const clear = (state, action) => {
@@ -51,8 +48,7 @@ const revert = (state, action) => {
 const percentage = (state, action) => {
 	return updateObject(state, {display: state.display / 100,
 								currState: state.display / 100,
-								updatedNumber: state.display + "/100",
-								decimal: true});
+								updatedNumber: state.display + "/100"});
 }
 
 const deleted = (state, action) => {
@@ -62,8 +58,7 @@ const deleted = (state, action) => {
 }
 
 const decimal = (state, action) => {
-	return updateObject(state, {display: state.display + action.decimal,
-								decimal: true});
+	return updateObject(state, {display: state.display + action.decimal});
 }
 
 const rootReducer = (state = initialState , action) => {
