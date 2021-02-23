@@ -5,6 +5,11 @@ of being able to use the equal key multiple times in a row to re-compute the las
 the the display. The state is a little harder to understand so if you have any qeustions about
 it feel free to contact me! 
 
+## How to use
+
+A static Github page has been provided to check out the application without having to an `npm install`.
+If you clone the project all that is need to start the application is `npm install` which will install dependencies for React & Redux. After installing `npm start` will launch the local copy of the project. For building `npm build` can be used, and to create a static page like the one linked in the project you can use `npm deploy` after running the `npm build` command.
+
 
 ## Known issues
 
